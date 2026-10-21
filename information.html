@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Arslan Ali's web development experience, skills, and portfolio concepts.">
+    <title>Projects &amp; Experience | Arslan Ali</title>
+    <style>
+        :root {
+            --ink: #193536;
+            --muted: #526967;
+            --paper: #f4f7f4;
+            --white: #ffffff;
+            --sage: #e5eee8;
+            --line: #d6dfd9;
+            --accent: #a34f28;
+            --gold: #f2b36d;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.6;
+        }
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 1.2rem max(8%, calc((100% - 1120px) / 2));
+            background: var(--ink);
+            color: var(--white);
+            font-family: Arial, sans-serif;
+        }
+        .brand {
+            color: var(--white);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .brand span {
+            display: block;
+            color: #c2d2cb;
+            font-size: 0.7rem;
+            font-weight: normal;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; }
+        nav a { color: var(--white); text-decoration: none; }
+        nav a:hover, nav a[aria-current="page"] { color: var(--gold); }
+        main { max-width: 1120px; margin: 0 auto; padding: 3.5rem 8% 4rem; }
+        .eyebrow {
+            margin: 0 0 0.5rem;
+            color: var(--accent);
+            font-family: Arial, sans-serif;
+            font-size: 0.78rem;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .page-intro {
+            display: grid;
+            grid-template-columns: 1fr 0.7fr;
+            align-items: end;
+            gap: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--line);
+        }
+        h1, h2, h3 { line-height: 1.2; }
+        .page-intro h1 { margin: 0; font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.04em; }
+        .page-intro h1 span { color: var(--accent); }
+        .page-intro > p { margin: 0; color: var(--muted); font-size: 1.05rem; }
+        .project-feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border: 1px solid var(--line);
+            border-radius: 7px;
+            background: var(--white);
+        }
+        .project-feature img {
+            display: block;
+            width: 100%;
+            min-height: 230px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+        .project-feature h2 { margin: 0 0 0.7rem; font-size: 1.8rem; }
+        .project-feature p { color: var(--muted); }
+        .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; list-style: none; }
+        .tag-list li {
+            padding: 0.3rem 0.65rem;
+            border-radius: 20px;
+            background: var(--sage);
+            color: var(--ink);
+            font: 0.8rem Arial, sans-serif;
+        }
+        .section-title { margin: 3rem 0 1.2rem; }
+        .section-title h2 { margin: 0; font-size: 1.8rem; }
+        .background-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .background-card {
+            padding: 1.25rem;
+            border-top: 3px solid var(--gold);
+            background: var(--sage);
+        }
+        .background-card h3 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+        .background-card p { margin: 0; color: var(--muted); }
+        .overview {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+            background: var(--white);
+            text-align: left;
+        }
+        .overview caption { padding: 0.6rem 0; font-weight: bold; text-align: left; }
+        .overview th, .overview td { padding: 0.8rem; border: 1px solid var(--line); }
+        .overview thead { background: var(--ink); color: var(--white); }
+        .overview tbody tr:nth-child(even) { background: #f0f4f1; }
+        .media-section {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            border-radius: 7px;
+            background: var(--ink);
+            color: var(--white);
+        }
+        .media-section h2 { margin-top: 0; }
+        .media-section > p { color: #d4e0da; }
+        .media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .media-grid h3 { margin-bottom: 0.5rem; }
+        audio, video { display: block; width: 100%; max-width: 100%; }
+        .page-footer {
+            padding: 1.5rem max(8%, calc((100% - 1120px) / 2));
+            background: var(--ink);
+            color: var(--white);
+            font-family: Arial, sans-serif;
+        }
+        .page-footer a { color: var(--gold); }
+        @media (max-width: 700px) {
+            .page-header { align-items: flex-start; flex-direction: column; gap: 0.8rem; }
+            main { padding-top: 2.5rem; }
+            .page-intro, .project-feature { grid-template-columns: 1fr; }
+            .background-grid, .media-grid { grid-template-columns: 1fr; }
+            .project-feature img { min-height: 180px; }
+            .overview { font-size: 0.85rem; }
+            .overview th, .overview td { padding: 0.55rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <a class="brand" href="index.html">ARSLAN ALI<span>Portfolio</span></a>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="information.html" aria-current="page">Projects &amp; Experience</a>
+            <a href="registration.html">Project Inquiry</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-intro" aria-labelledby="page-heading">
+            <div>
+                <p class="eyebrow">A little about my work</p>
+                <h1 id="page-heading">Projects &amp; <span>experience</span></h1>
+            </div>
+            <p>I'm building my skills through study, hands-on web development, and a curiosity for creating better online experiences.</p>
+        </section>
+
+        <article class="project-feature">
+            <img src="assets/images/developer-workspace.jpg" alt="Two people collaborating at a laptop in a bright workspace" width="520" height="350">
+            <div>
+                <p class="eyebrow">Featured project · Assignment</p>
+                <h2>Personal portfolio website</h2>
+                <p>A responsive, multi-page portfolio that introduces my background, presents sample project concepts, and provides a simple inquiry form. Built with semantic HTML and CSS.</p>
+                <ul class="tag-list" aria-label="Technologies used">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Responsive design</li>
+                </ul>
+            </div>
+        </article>
+
+        <section aria-labelledby="background-heading">
+            <div class="section-title">
+                <p class="eyebrow">My foundation</p>
+                <h2 id="background-heading">Education &amp; experience</h2>
+            </div>
+            <div class="background-grid">
+                <article class="background-card">
+                    <h3>Education</h3>
+                    <p>BS Computer Science at Lahore Garrison University, expected graduation in 2028.</p>
+                </article>
+                <article class="background-card">
+                    <h3>Web development</h3>
+                    <p>Practical experience contributing to web development work.</p>
+                </article>
+                <article class="background-card">
+                    <h3>Certification</h3>
+                    <p>Web Development Internship Certificate from INNORA TECH.</p>
+                </article>
+            </div>
+        </section>
+
+        <table class="overview">
+            <caption>Portfolio project concepts</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Concept</th>
+                    <th scope="col">Focus</th>
+                    <th scope="col">Key details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Responsive service page</th>
+                    <td>Layout</td>
+                    <td>Adapts content for different screen sizes</td>
+                </tr>
+                <tr>
+                    <th scope="row">Accessible contact form</th>
+                    <td>Usability</td>
+                    <td>Clear labels, grouped controls, and native validation</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <section class="media-section" aria-labelledby="media-heading">
+            <p class="eyebrow">HTML media demo</p>
+            <h2 id="media-heading">Audio &amp; video samples</h2>
+            <p>These local sample clips demonstrate the browser's built-in playback controls.</p>
+            <div class="media-grid">
+                <div>
+                    <h3>Audio sample</h3>
+                    <audio controls>
+                        <source src="assets/audio/sample.mp3" type="audio/mpeg">
+                        Your browser does not support audio playback.
+                    </audio>
+                </div>
+                <div>
+                    <h3>Video sample</h3>
+                    <video controls width="640" height="360" preload="metadata" poster="assets/images/developer-workspace.jpg">
+                        <source src="assets/video/sample.mp4" type="video/mp4">
+                        Your browser does not support video playback.
+                    </video>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <p><a href="mailto:arslanriaz0309@gmail.com">Contact Arslan Ali</a> | <a href="https://linkedin.com/in/arslan-ali01">LinkedIn</a> | <a href="https://github.com/Arslan-Ali1">GitHub</a></p>
+    </footer>
+</body>
+</html>
